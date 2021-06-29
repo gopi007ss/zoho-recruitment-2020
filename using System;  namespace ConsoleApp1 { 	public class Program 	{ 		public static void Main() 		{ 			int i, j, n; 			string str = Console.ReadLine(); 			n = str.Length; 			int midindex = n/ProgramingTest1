@@ -1,0 +1,36 @@
+using System;
+
+namespace ConsoleApp1
+{
+	public class Program
+	{
+		public static void Main()
+		{
+			int i, j, n;
+			string str = Console.ReadLine();
+			n = str.Length;
+			int midindex = n/2;
+			char[] arr = str.ToCharArray();
+			int temp;
+			for (i = 1; i <= n; i++)
+			{
+				for (j = i; j < n; j++)
+					Console.Write(" ");			
+				for (j = 0; j < i; j++)
+                {
+					if(j > midindex)
+                    {
+						int index = n - midindex - j;
+						if(index < midindex)
+							Console.Write(arr[n - j]);
+					}						
+					else
+						Console.Write(arr[n-midindex + j -1]);
+				}
+					
+				
+				Console.WriteLine();
+			}
+		}
+	}
+}
